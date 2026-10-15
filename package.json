@@ -10,6 +10,7 @@
   },
   "license": "MIT",
   "scripts": {
+    "test": "node --test --test-concurrency=2 tests/*.test.mjs",
     "dev": "python3 -m http.server 4321",
     "preview": "python3 -m http.server 4321"
   }

@@ -17,7 +17,7 @@ JavaScript runtime, no analytics. Deploys directly to Vercel.
 | `index.html`   | Page markup                                              |
 | `style.css`    | Abyssal archival theme, hairline rules, hero motion      |
 | `vercel.json`  | Clean URLs, security headers, cache policy               |
-| `package.json` | Tiny manifest with a `python3 -m http.server` dev script |
+| `package.json` | Local preview and workflow regression test scripts |
 
 ## Local preview
 
@@ -28,6 +28,21 @@ python3 -m http.server 4321
 ```
 
 Then open <http://localhost:4321>.
+
+## Checks
+
+Run the dispatch concurrency regression tests with Node.js 22 or later:
+
+```bash
+pnpm test
+# or
+node --test --test-concurrency=2 tests/*.test.mjs
+```
+
+Comment commands have separate concurrency groups per comment, so issue or pull
+request edits cannot cancel them. Edits to the same comment still supersede its
+earlier dispatch; metadata edits continue to supersede earlier metadata runs.
+Ignored bot label events also use a separate group.
 
 ## Deploy
 
