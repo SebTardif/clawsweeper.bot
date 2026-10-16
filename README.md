@@ -42,7 +42,9 @@ node --test --test-concurrency=2 tests/*.test.mjs
 Comment commands have separate concurrency groups per comment, so issue or pull
 request edits cannot cancel them. Edits to the same comment still supersede its
 earlier dispatch; metadata edits continue to supersede earlier metadata runs.
-Ignored bot label events also use a separate group.
+Ignored bot label events also use a separate group. Marked maintainer opt-in
+reminders are ignored even when they quote a command; ordinary comment commands
+continue to use the shared router's existing command set.
 
 ## Deploy
 

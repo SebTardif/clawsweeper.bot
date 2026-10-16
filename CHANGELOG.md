@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Ignore maintainer opt-in reminders in the comment prefilter so quoted commands do not queue another dispatch. Thanks @SebTardif (#4).
+
 ## 1.0.1 — 2026-10-16
 
 **Highlights:** Keep comment commands running through metadata edits and ignored bot labels, and update the dispatch action with its security-patched HTTP dependency.
